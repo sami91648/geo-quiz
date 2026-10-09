@@ -1,0 +1,1015 @@
+/* =========================================================
+   🌍 GEO QUIZ — STYLE.CSS
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            #18284d 0%,
+            #10131f 42%,
+            #080a12 100%
+        );
+
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: white;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+/* =========================================================
+   🌌 CONTENU PRINCIPAL
+   ========================================================= */
+
+.contenu {
+    position: relative;
+    z-index: 2;
+
+    min-height: 100vh;
+    width: 100%;
+
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    animation: apparitionPage 0.7s ease both;
+}
+
+
+/* =========================================================
+   🌍 TITRE
+   ========================================================= */
+
+h1 {
+    margin: 0 0 12px;
+
+    font-size: clamp(45px, 7vw, 75px);
+    font-weight: 900;
+
+    color: #2388ff;
+
+    text-shadow:
+        0 0 8px rgba(35, 136, 255, 0.8),
+        0 0 20px rgba(35, 136, 255, 0.6),
+        0 0 40px rgba(35, 136, 255, 0.35);
+
+    animation: titreLumiere 2.5s ease-in-out infinite alternate;
+}
+
+p {
+    margin: 0 0 35px;
+
+    font-size: 20px;
+    color: #d9e5ff;
+}
+
+
+/* =========================================================
+   🎯 TITRES SECONDAIRES
+   ========================================================= */
+
+h2 {
+    max-width: 850px;
+
+    margin: 20px auto 35px;
+
+    font-size: clamp(24px, 4vw, 42px);
+    line-height: 1.3;
+
+    color: white;
+
+    text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.15);
+}
+
+
+/* =========================================================
+   🎮 BOUTONS GÉNÉRAUX
+   ========================================================= */
+
+button {
+    position: relative;
+
+    width: min(850px, 90%);
+    min-height: 65px;
+
+    margin: 10px 0;
+    padding: 15px 25px;
+
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 18px;
+
+    color: white;
+
+    font-size: 21px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        filter 0.18s ease;
+
+    box-shadow:
+        0 0 10px rgba(255, 255, 255, 0.08),
+        inset 0 0 12px rgba(255, 255, 255, 0.05);
+}
+
+button:hover {
+    transform: scale(1.035);
+
+    filter: brightness(1.12);
+
+    box-shadow:
+        0 0 12px rgba(255, 255, 255, 0.25),
+        0 0 25px rgba(35, 136, 255, 0.25);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================================================
+   🏠 BOUTONS ACCUEIL
+   ========================================================= */
+
+.contenu > button:nth-of-type(1) {
+    background:
+        linear-gradient(135deg, #e53935, #b71c1c);
+
+    box-shadow:
+        0 0 15px rgba(229, 57, 53, 0.35);
+}
+
+.contenu > button:nth-of-type(2) {
+    background:
+        linear-gradient(135deg, #20c997, #087f5b);
+
+    box-shadow:
+        0 0 15px rgba(32, 201, 151, 0.35);
+}
+
+.contenu > button:nth-of-type(3) {
+    background:
+        linear-gradient(135deg, #9b5de5, #5f27cd);
+
+    box-shadow:
+        0 0 15px rgba(155, 93, 229, 0.4);
+}
+
+
+/* =========================================================
+   🎚️ DIFFICULTÉS
+   ========================================================= */
+
+#facile {
+    background:
+        linear-gradient(135deg, #20c997, #087f5b);
+
+    box-shadow:
+        0 0 18px rgba(32, 201, 151, 0.4);
+}
+
+#moyen {
+    background:
+        linear-gradient(135deg, #ffb703, #e67e00);
+
+    box-shadow:
+        0 0 18px rgba(255, 183, 3, 0.4);
+}
+
+#difficile {
+    background:
+        linear-gradient(135deg, #ff4d4d, #c1121f);
+
+    box-shadow:
+        0 0 18px rgba(255, 77, 77, 0.4);
+}
+
+#impossible {
+    background:
+        linear-gradient(135deg, #3b3b4f, #11111d);
+
+    box-shadow:
+        0 0 18px rgba(150, 150, 180, 0.3);
+}
+
+
+/* =========================================================
+   ↩️ RETOUR
+   ========================================================= */
+
+#retour {
+    position: fixed;
+
+    right: 22px;
+    bottom: 18px;
+
+    width: auto;
+    min-width: 125px;
+    min-height: 45px;
+
+    margin: 0;
+    padding: 10px 18px;
+
+    font-size: 16px;
+
+    background:
+        rgba(30, 35, 55, 0.9);
+
+    border-color: rgba(255, 255, 255, 0.5);
+
+    box-shadow:
+        0 0 12px rgba(255, 255, 255, 0.12);
+}
+
+#retour:hover {
+    background:
+        rgba(50, 60, 90, 0.95);
+}
+
+
+/* =========================================================
+   ❓ INTERFACE QUIZ
+   ========================================================= */
+
+.interfaceQuiz {
+    position: relative;
+    z-index: 2;
+
+    min-height: 100vh;
+    width: 100%;
+
+    padding:
+        25px
+        clamp(15px, 5vw, 70px)
+        40px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    animation: apparitionPage 0.5s ease both;
+}
+
+
+/* =========================================================
+   📊 INFOS QUIZ
+   ========================================================= */
+
+.infosQuiz {
+    width: min(900px, 95%);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 20px;
+
+    font-size: 16px;
+    font-weight: 800;
+
+    color: #dce7ff;
+
+    flex-wrap: wrap;
+}
+
+.vies {
+    color: #ff5a67;
+
+    text-shadow:
+        0 0 8px rgba(255, 90, 103, 0.5);
+}
+
+.combo {
+    color: #ff9f1c;
+
+    transition:
+        transform 0.2s ease,
+        text-shadow 0.2s ease;
+}
+
+.comboActif {
+    transform: scale(1.15);
+
+    text-shadow:
+        0 0 10px rgba(255, 159, 28, 0.8),
+        0 0 25px rgba(255, 159, 28, 0.5);
+}
+
+
+/* =========================================================
+   ⏱️ TIMER
+   ========================================================= */
+
+#timer {
+    margin: 5px 0 10px;
+
+    font-size: 28px;
+    font-weight: 900;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.25);
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.timerUrgent {
+    color: #ff4545 !important;
+
+    animation:
+        timerUrgence 0.5s ease-in-out infinite alternate;
+}
+
+
+/* =========================================================
+   ⏳ BARRE DU TIMER
+   ========================================================= */
+
+.barreTemps {
+    width: min(850px, 90%);
+    height: 10px;
+
+    margin-bottom: 30px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255, 255, 255, 0.12);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.15);
+}
+
+#progressionTemps {
+    width: 100%;
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            #20c997,
+            #2388ff,
+            #9b5de5
+        );
+
+    box-shadow:
+        0 0 10px rgba(35, 136, 255, 0.5);
+
+    transition:
+        width 0.9s linear;
+}
+
+
+/* =========================================================
+   🌎 QUESTION
+   ========================================================= */
+
+.questionPrincipale {
+    width: min(900px, 95%);
+
+    margin-bottom: 25px;
+
+    font-size: clamp(25px, 4vw, 42px);
+    font-weight: 900;
+
+    line-height: 1.25;
+
+    color: white;
+
+    text-shadow:
+        0 0 12px rgba(255, 255, 255, 0.15);
+}
+
+
+/* =========================================================
+   🚩 DRAPEAU
+   ========================================================= */
+
+#drapeau {
+    margin: 10px 0 30px;
+
+    font-size: clamp(90px, 16vw, 170px);
+
+    line-height: 1;
+
+    filter:
+        drop-shadow(0 0 15px rgba(255, 255, 255, 0.15));
+
+    animation:
+        drapeauApparition 0.6s ease both;
+}
+
+
+/* =========================================================
+   🪐 PLANÈTES
+   ========================================================= */
+
+.interfaceQuiz img {
+    display: block;
+
+    width: min(300px, 60vw);
+    max-height: 300px;
+
+    object-fit: contain;
+
+    margin: 5px auto 30px;
+
+    filter:
+        drop-shadow(0 0 18px rgba(255, 255, 255, 0.15));
+
+    animation:
+        planeteFlottante 3s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   🎨 RÉPONSES — COULEURS VARIÉES
+   ========================================================= */
+
+#reponses {
+    width: min(850px, 95%);
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 16px;
+
+    margin-top: 5px;
+}
+
+
+/* Toutes les cases de réponse */
+#reponses .reponse {
+    width: 100%;
+    min-height: 75px;
+
+    margin: 0;
+
+    border-radius: 18px;
+
+    color: white;
+
+    font-size: 19px;
+    font-weight: 900;
+
+    border: 2px solid rgba(255, 255, 255, 0.85);
+
+    text-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.35);
+
+    transition:
+        transform 0.18s ease,
+        filter 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+
+/* 🔴 Première réponse */
+#reponses .reponse:nth-child(1) {
+    background:
+        linear-gradient(
+            135deg,
+            #ff4d5a,
+            #c9184a
+        );
+
+    box-shadow:
+        0 0 15px rgba(255, 77, 90, 0.35);
+}
+
+
+/* 🟢 Deuxième réponse */
+#reponses .reponse:nth-child(2) {
+    background:
+        linear-gradient(
+            135deg,
+            #20c997,
+            #087f5b
+        );
+
+    box-shadow:
+        0 0 15px rgba(32, 201, 151, 0.35);
+}
+
+
+/* 🟣 Troisième réponse */
+#reponses .reponse:nth-child(3) {
+    background:
+        linear-gradient(
+            135deg,
+            #9b5de5,
+            #5f27cd
+        );
+
+    box-shadow:
+        0 0 15px rgba(155, 93, 229, 0.4);
+}
+
+
+/* Zoom des réponses */
+#reponses .reponse:hover {
+    transform: scale(1.045);
+
+    filter: brightness(1.15);
+
+    box-shadow:
+        0 0 15px rgba(255, 255, 255, 0.25),
+        0 0 30px rgba(255, 255, 255, 0.15);
+}
+
+#reponses .reponse:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================================
+   ⚡ BONUS
+   ========================================================= */
+
+.bonus {
+    margin-top: 12px;
+
+    color: #ffd166;
+
+    font-size: 18px;
+    font-weight: 900;
+
+    animation:
+        bonusApparition 0.4s ease both;
+}
+
+
+/* =========================================================
+   🏆 SCORE FINAL
+   ========================================================= */
+
+.scoreFinal {
+    margin: 20px 0;
+
+    font-size: clamp(45px, 8vw, 80px);
+    font-weight: 900;
+
+    color: #ffd166;
+
+    text-shadow:
+        0 0 10px rgba(255, 209, 102, 0.7),
+        0 0 30px rgba(255, 209, 102, 0.4);
+
+    animation:
+        scoreFinalAnimation 1s ease both;
+}
+
+.statsFinales {
+    margin-bottom: 30px;
+
+    font-size: 20px;
+    font-weight: 800;
+
+    line-height: 1.7;
+
+    color: #e5ecff;
+}
+
+
+/* =========================================================
+   🎉 VICTOIRE
+   ========================================================= */
+
+.victoireAnimation {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 9999;
+}
+
+.confetti {
+    position: absolute;
+
+    top: -20px;
+
+    color: #ffffff;
+
+    animation:
+        confettiTombe linear forwards;
+}
+
+
+/* =========================================================
+   💚 FLASH BONNE RÉPONSE
+   ========================================================= */
+
+.flashBonne {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9998;
+
+    pointer-events: none;
+
+    background:
+        rgba(40, 220, 120, 0.25);
+
+    animation:
+        flashVert 0.5s ease-out forwards;
+}
+
+
+/* =========================================================
+   💥 FLASH MAUVAISE RÉPONSE
+   ========================================================= */
+
+.flashMauvaise {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9998;
+
+    pointer-events: none;
+
+    background:
+        rgba(255, 50, 60, 0.28);
+
+    animation:
+        flashRouge 0.5s ease-out forwards;
+}
+
+
+/* =========================================================
+   💥 TREMBLEMENT
+   ========================================================= */
+
+body.tremblement {
+    animation:
+        tremblementQuiz 0.45s ease;
+}
+
+
+/* =========================================================
+   🌌 DOODLES
+   ========================================================= */
+
+.doodles {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 0;
+}
+
+.doodles span {
+    position: absolute;
+
+    top: -80px;
+
+    color: #2388ff;
+
+    font-size: 30px;
+
+    opacity: 0.3;
+
+    animation:
+        tomber 14s linear infinite;
+
+    filter:
+        drop-shadow(
+            0 0 7px rgba(35, 136, 255, 0.7)
+        );
+}
+
+
+/* =========================================================
+   ✨ ANIMATIONS
+   ========================================================= */
+
+@keyframes apparitionPage {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes titreLumiere {
+    from {
+        text-shadow:
+            0 0 8px rgba(35, 136, 255, 0.6),
+            0 0 18px rgba(35, 136, 255, 0.4);
+    }
+
+    to {
+        text-shadow:
+            0 0 12px rgba(35, 136, 255, 0.9),
+            0 0 30px rgba(35, 136, 255, 0.7),
+            0 0 55px rgba(35, 136, 255, 0.35);
+    }
+}
+
+
+@keyframes tomber {
+    0% {
+        top: -80px;
+        transform:
+            translateX(0)
+            rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.3;
+    }
+
+    50% {
+        transform:
+            translateX(45px)
+            rotate(180deg)
+            scale(1.1);
+    }
+
+    85% {
+        opacity: 0.3;
+    }
+
+    100% {
+        top: 110vh;
+
+        transform:
+            translateX(-35px)
+            rotate(360deg)
+            scale(0.9);
+
+        opacity: 0;
+    }
+}
+
+
+@keyframes planeteFlottante {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes drapeauApparition {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+@keyframes timerUrgence {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.12);
+    }
+}
+
+
+@keyframes tremblementQuiz {
+    0% {
+        transform: translateX(0);
+    }
+
+    15% {
+        transform: translateX(-8px);
+    }
+
+    30% {
+        transform: translateX(8px);
+    }
+
+    45% {
+        transform: translateX(-7px);
+    }
+
+    60% {
+        transform: translateX(7px);
+    }
+
+    75% {
+        transform: translateX(-4px);
+    }
+
+    90% {
+        transform: translateX(4px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes flashVert {
+    0% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+@keyframes flashRouge {
+    0% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+@keyframes confettiTombe {
+    from {
+        top: -20px;
+        transform:
+            rotate(0deg)
+            translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        top: 110vh;
+        transform:
+            rotate(720deg)
+            translateX(100px);
+        opacity: 0;
+    }
+}
+
+
+@keyframes bonusApparition {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+@keyframes scoreFinalAnimation {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* =========================================================
+   📱 RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .contenu {
+        padding: 20px 15px;
+    }
+
+    h1 {
+        font-size: 48px;
+    }
+
+    p {
+        font-size: 17px;
+    }
+
+    #reponses {
+        grid-template-columns: 1fr;
+
+        width: min(500px, 92%);
+    }
+
+    #reponses .reponse {
+        min-height: 65px;
+
+        font-size: 18px;
+    }
+
+    .infosQuiz {
+        justify-content: center;
+
+        font-size: 14px;
+    }
+
+    .interfaceQuiz {
+        padding:
+            20px
+            12px
+            35px;
+    }
+
+    .questionPrincipale {
+        font-size: 26px;
+    }
+
+    #drapeau {
+        font-size: 90px;
+    }
+
+    .interfaceQuiz img {
+        width: min(230px, 60vw);
+        max-height: 230px;
+    }
+
+    #retour {
+        right: 12px;
+        bottom: 12px;
+
+        min-width: 105px;
+
+        font-size: 14px;
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
+}
